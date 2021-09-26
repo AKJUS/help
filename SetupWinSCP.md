@@ -22,3 +22,21 @@ Add an editor, usually Notepad++ (can be downloaded [here](https://notepad-plus-
 
 ## Add SSH or SFTP session using Public Key Authentication
 
+- 1. Choose SFTP.
+- 2. Enter the servers hostname or IP address.
+- 3. Default port number is both 22 for SSH or SFTP.
+- 4. Enter your username.
+- 5. Don't enter any password, leave it empty.
+- 6. Finally click **Advanced...**.
+
+![session1](https://user-images.githubusercontent.com/40885610/134816867-3d7af16a-28a1-4f62-b43a-1ac6720508f6.png)
+
+Now, make sure the setting *Sending of null SSH packets* is enabled:
+
+![advanced1](https://user-images.githubusercontent.com/40885610/134816996-8e9db7aa-2823-47ca-b2df-28f51ce53585.png)
+
+Finally, set your private key which is used *instead of a password* for authentication:
+
+![advanced2](https://user-images.githubusercontent.com/40885610/134817021-f80a9094-e4b9-408f-a37b-f8aac84d9b59.png)
+
+
