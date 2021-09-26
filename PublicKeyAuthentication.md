@@ -1,5 +1,7 @@
 # Create a Public Key Pair
 
+In order to create a Public Key Pair, we need the program PuTTYgen, see: https://github.com/etkaar/help/tree/main/tools
+
 Choose **1. Ed25519** and then **2.** click **Generate**. Once that is done, two cryptographic values are generated: A private key which obviously must be kept private (if you would share that, it would be the same as sharing your password) and a public key.
 
 Now, create a new directory on a drive where you are sure, the data is not lost, e.g. **D:\secret-keypairs**.
