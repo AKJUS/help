@@ -35,8 +35,12 @@ Now, make sure the setting *Sending of null SSH packets* is enabled:
 
 ![advanced1](https://user-images.githubusercontent.com/40885610/134816996-8e9db7aa-2823-47ca-b2df-28f51ce53585.png)
 
-Finally, set your private key which is used *instead of a password* for authentication:
+Set your private key which is used *instead of a password* for authentication:
 
 ![advanced2](https://user-images.githubusercontent.com/40885610/134817021-f80a9094-e4b9-408f-a37b-f8aac84d9b59.png)
+
+You can now finally save your session and will be never asked again for any credentials:
+
+![session2](https://user-images.githubusercontent.com/40885610/134817083-4b82ce5d-59bd-4a09-b49e-e28dea2935ff.png)
 
 
