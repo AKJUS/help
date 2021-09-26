@@ -1,6 +1,8 @@
 # Setup WinSCP
 
-WinSCP can be used for live editing, uploading and downloading files using SSH/SFTP. You can download it [here](https://winscp.net/eng/download.php).
+WinSCP can be used for live editing, uploading and downloading files using an encrypted SSH/SFTP connection. SFTP is part of OpenSSH and easy to setup. Don't use FTP or SCP – both is either insecure or outdated.
+
+You can download WinSCP [here](https://winscp.net/eng/download.php).
 
 ## Settings
 
