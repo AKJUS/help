@@ -43,4 +43,8 @@ You can now finally save your session and will be never asked again for any cred
 
 ![session2](https://user-images.githubusercontent.com/40885610/134817083-4b82ce5d-59bd-4a09-b49e-e28dea2935ff.png)
 
+## Permission Errors
 
+In case you don't have root access, you might get the error *Upload of file [...] was successful, but error occurred while setting the permissions and/or timestamp*. In that case, you need to disable the option **Preserve timestamp**:
+
+![transfer-settings](https://user-images.githubusercontent.com/40885610/134830557-89c8b7e9-d984-4a86-9aba-8951679ca8ee.png)
