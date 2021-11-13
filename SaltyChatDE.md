@@ -1,5 +1,9 @@
 # SaltyChat
 
+Du kannst Version 2.3.6 von SaltyChat übrigens [hier](https://gaming.v10networks.com/saltychat/download/2.3.6) herunterladen.
+
+## Ich werde nicht in den richtigen Raum verschoben ☹️
+
 Falls Du das Problem hast, dass Du von SaltyChat nicht in den richtigen Raum des TeamSpeak-Servers verschoben wirst, nachdem Du dem Server beigetreten bist, wird häufig das Ändern des DNS-Servers empfohlen. Diese Lösung mag zwar funktionieren, sie ist aber für einige Personen ungeeignet. Und sie ist vor allem falsch, weil der Eingriff **viel zu weitgehend** ist.
 
 Der korrekte Weg, um das Problem zu beheben, liegt darin, die Datei
