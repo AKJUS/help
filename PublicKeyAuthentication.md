@@ -1,4 +1,4 @@
-# Create personal Key Pair for Public Key Authentication
+# Create Personal Key Pair for Public Key Authentication
 
 In order to create a Key Pair, you need the program PuTTYgen, see: https://github.com/etkaar/help/tree/main/tools
 
