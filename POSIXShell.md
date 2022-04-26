@@ -16,19 +16,19 @@ In order to redirect output to STDERR, you can use `>&2` either at the end or at
 Suppress standard output:
 
 ```shell
->/dev/null nft --version
+nft --version >/dev/null
 ```
 
 Lets assume the command before (`nft ...`) is just used in order to receive the exit code to find out, if the package is installed or not:
 
 ```shell
-RESULT=$(>/dev/null nft --version)
+RESULT=$(nft --version >/dev/null)
 ```
 
 In that case we need to both suppress STDOUT *and* STDERR, because either it will return the version or an error message (`command not found`):
 
 ```shell
-RESULT=$(>/dev/null 2>&1 nft --version)
+RESULT=$(nft --version >/dev/null 2>&1)
 ```
 
 ---
