@@ -31,6 +31,8 @@ In that case we need to both suppress STDOUT *and* STDERR, because either it wil
 RESULT=$(>/dev/null 2>&1 nft --version)
 ```
 
+---
+
 ### 1.1 Return does not return boolean
 
 Bear in mind that return does not return a boolean, but an exit code which is a positive integer between 0 and 255. While 0 stands for success, any other value indicates an error:
@@ -52,6 +54,8 @@ func_IS_UNSIGNED_INTEGER() {
 }
 ```
 
+---
+
 ### 1.2 printf *vs* echo
 
 You should use `printf` instead of `echo`, because it is more portable:
@@ -68,6 +72,8 @@ echo "Text with a new line after it."
 printf '%s\n' "Text with a new line after it."
 ```
 
+---
+
 ### 1.3 Quoted Variables
 
 In the most cases, you want to place double-quotes (`$VAR`) around variables. This also applies to command substitution. Otherwise not all of the content of the variable – including whitespace – is passed, but the variable gets splitted.
@@ -75,25 +81,24 @@ In the most cases, you want to place double-quotes (`$VAR`) around variables. Th
 #### Correct
 
 ```shell
-RETURN_CODE="$(dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1)"
+RESULT="$(dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1)"
 ```
 
 #### Wrong
 
 ```shell
-RETURN_CODE=$(dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1)
+RESULT=$(dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1)
 ```
 
 ```shell
-RETURN_CODE=$(dpkg-query -s $PACKAGE_NAME >/dev/null 2>&1)
+RESULT=$(dpkg-query -s $PACKAGE_NAME >/dev/null 2>&1)
 ```
 
 #### Deprecated
 
 Backticks (`` ` ``) – or also called backquotes – are deprecated for command substitution. Instead use `$(...)`.
 ```shell
-RETURN_CODE="`dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1`"
+RESULT="`dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1`"
 ```
-
 
 
