@@ -87,24 +87,24 @@ In the most cases, you want to place double-quotes (`$VAR`) around variables. Th
 #### Correct
 
 ```shell
-RESULT="$(dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1)"
+RESULT="$(>/dev/null 2>&1 dpkg-query -s "$PACKAGE_NAME")"
 ```
 
 #### Wrong
 
 ```shell
-RESULT=$(dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1)
+RESULT=$(>/dev/null 2>&1 dpkg-query -s "$PACKAGE_NAME")
 ```
 
 ```shell
-RESULT=$(dpkg-query -s $PACKAGE_NAME >/dev/null 2>&1)
+RESULT=$(>/dev/null 2>&1 dpkg-query -s $PACKAGE_NAME)
 ```
 
 #### Deprecated
 
 Backticks (`` ` ``) – or also called backquotes – are deprecated for command substitution. Instead use `$(...)`.
 ```shell
-RESULT="`dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1`"
+RESULT="`>/dev/null 2>&1 dpkg-query -s "$PACKAGE_NAME"`"
 ```
 
 <sub>
