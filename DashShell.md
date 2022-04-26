@@ -72,6 +72,12 @@ echo "Text with a new line after it."
 printf '%s\n' "Text with a new line after it."
 ```
 
+<sub>
+<b>References</b>
+<br>- https://askubuntu.com/questions/467747/which-is-better-printf-or-echo
+<br>- https://unix.stackexchange.com/questions/65803/why-is-printf-better-than-echo
+</sub>
+
 ---
 
 ### 1.3 Quoted Variables
@@ -101,4 +107,22 @@ Backticks (`` ` ``) – or also called backquotes – are deprecated for command
 RESULT="`dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1`"
 ```
 
+<sub>
+<b>References</b>
+<br>- https://unix.stackexchange.com/questions/118433/quoting-within-command-substitution-in-bash
+</sub>
 
+### 1.4 Comments
+
+```shell
+# Single line comment
+```
+
+```shell
+: '''
+Comment
+over
+multiple
+lines.
+'''
+```
