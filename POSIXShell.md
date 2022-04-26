@@ -4,7 +4,7 @@ While Bash is very popular (and so is its syntax), Dash replaced Bash as non-int
 
 However, Bash is not POSIX-compliant which can be a portability problem, especially when shared with the open-source community. Instead of memorizing different syntaxes and features between different shells – which can be dangerously confusing – I decided to use exactly **one** shell. Since Dash is POSIX-compliant, the choice was clear and I stopped writing shell scripts in Bash.
 
-## Helpful Tips
+## Some Helpful Tips
 ### 1.0 STDERR and STDOUT
 
 In order to redirect output to STDERR, you can use `>&2` either at the end or at the beginning to improve readabilty:
