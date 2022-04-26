@@ -112,6 +112,8 @@ RESULT="`dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1`"
 <br>- https://unix.stackexchange.com/questions/118433/quoting-within-command-substitution-in-bash
 </sub>
 
+---
+
 ### 1.4 Comments
 
 ```shell
