@@ -128,3 +128,30 @@ multiple
 lines.
 '''
 ```
+
+---
+
+### 1.5 Strings
+
+#### Length
+```shell
+VAR="This string is 34 characters long."
+printf '%s\n' "${#VAR}"
+```
+
+#### Remove from the beginning
+```shell
+VAR="/foo/bar/"
+printf '%s\n' "${VAR#/}"
+```
+
+#### Remove from the end
+```shell
+VAR="/foo/bar/"
+printf '%s\n' "${VAR%/}"
+```
+
+<sub>
+<b>References</b>
+<br>- https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html
+</sub>
