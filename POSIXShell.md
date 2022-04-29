@@ -8,9 +8,9 @@ All of the code above is POSIX-compliant. No language based special features are
 
 ## History
 
-[Bourne Shell (sh)](https://en.wikipedia.org/wiki/Bourne_shell) **›** System V Shell Release 4 (SVR4) **›** [Almquist Shell (ash)](https://en.wikipedia.org/wiki/Almquist_shell) **›** [*Debian Almquist Shell (dash)*](https://en.wikipedia.org/wiki/Almquist_shell#Adoption_in_Debian_and_Ubuntu)
+[*Debian Almquist Shell (dash)*](https://en.wikipedia.org/wiki/Almquist_shell#Adoption_in_Debian_and_Ubuntu) **‹** [Almquist Shell (ash)](https://en.wikipedia.org/wiki/Almquist_shell) **‹** System V Shell Release 4 (SVR4) **‹** [Bourne Shell (sh)](https://en.wikipedia.org/wiki/Bourne_shell)
 
-## Some Helpful Tips
+## Helpful Tips
 ### 1.0 STDERR and STDOUT
 
 In order to redirect output to STDERR, you can use `>&2` either at the end or at the beginning to improve readabilty:
