@@ -4,6 +4,12 @@ While Bash is very popular (and so is its syntax), Dash replaced Bash as non-int
 
 However, Bash is not POSIX-compliant which can be a portability problem, especially when shared with the open-source community. Instead of memorizing different syntaxes and features between different shells – which can be dangerously confusing – I decided to use exactly **one** shell. Since Dash is POSIX-compliant, the choice was clear and I stopped writing shell scripts in Bash.
 
+All of the code above is POSIX-compliant. No language based special features are used ("bashism").
+
+## History
+
+[Bourne Shell (sh)](https://en.wikipedia.org/wiki/Bourne_shell) **›** System V Shell Release 4 (SVR4) **›** [Almquist Shell (ash)](https://en.wikipedia.org/wiki/Almquist_shell) **›** [*Debian Almquist Shell (dash)*](https://en.wikipedia.org/wiki/Almquist_shell#Adoption_in_Debian_and_Ubuntu)
+
 ## Some Helpful Tips
 ### 1.0 STDERR and STDOUT
 
@@ -155,3 +161,4 @@ printf '%s\n' "${VAR%/}"
 <b>References</b>
 <br>- https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html
 </sub>
+
