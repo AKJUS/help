@@ -39,7 +39,7 @@ RESULT=$(nft --version >/dev/null 2>&1)
 
 ---
 
-### 1.1 Return does not return boolean
+### 2.0 Return does not return boolean
 
 Bear in mind that return does not return a boolean, but an exit code which is a positive integer between 0 and 255. While 0 stands for success, any other value indicates an error:
 
@@ -62,7 +62,7 @@ func_IS_UNSIGNED_INTEGER() {
 
 ---
 
-### 1.2 printf *vs* echo
+### 3.0 printf *vs* echo
 
 You should use `printf` instead of `echo`, because it is more portable:
 
@@ -86,7 +86,7 @@ printf '%s\n' "Text with a new line after it."
 
 ---
 
-### 1.3 Quoted Variables
+### 4.0 Quoted Variables
 
 In the most cases, you want to place double-quotes (`$VAR`) around variables. This also applies to command substitution. Otherwise not all of the content of the variable – including whitespace – is passed, but the variable gets splitted.
 
@@ -120,7 +120,7 @@ RESULT="`dpkg-query -s "$PACKAGE_NAME"` >/dev/null 2>&1"
 
 ---
 
-### 1.4 Comments
+### 5.0 Comments
 
 ```shell
 # Single line comment
@@ -137,7 +137,7 @@ lines.
 
 ---
 
-### 1.5 Strings
+### 6.0 Strings
 
 #### Length
 ```shell
@@ -162,3 +162,37 @@ printf '%s\n' "${VAR%/}"
 <br>- https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html
 </sub>
 
+---
+
+### 7.0 Assignment of Multiple Variables
+
+Let's say you have a configuration file with following content:
+
+```shell
+# ID     Name      Country
+01       Morton    US
+02       Matthew   CA
+```
+
+One way to assign these variables would be using `awk '{print $...}'`:
+
+```shell
+PARAM_ID="$(printf '%s' "$LINE" | awk '{print $1}')"
+PARAM_NAME="$(printf '%s' "$LINE" | awk '{print $2}')"
+PARAM_COUNTRY="$(printf '%s' "$LINE" | awk '{print $3}')"
+```
+
+However, this will create one subshell for each parameter. What you could also do is following:
+
+```shell
+read -r \
+PARAM_ID \
+PARAM_NAME \
+PARAM_COUNTRY \
+__TRAILING \
+<<-EOF
+$(printf '%s' "$LINE")
+EOF
+```
+
+The variable `__TRAILING` at the end covers the rest of the line in case it has more words then expected.
