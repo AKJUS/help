@@ -112,13 +112,14 @@ RESULT=$(dpkg-query -s $PACKAGE_NAME >/dev/null 2>&1)
 
 #### Discouraged
 
-While backticks (`` ` ``) – or also called backquotes – are not officialy deprecated, their use is discouraged. Instead use `$(...)`.
+While backticks (`` ` ``) – or also called backquotes – are not officially deprecated, their use is discouraged. Instead use `$(...)`.
 ```shell
 RESULT="`dpkg-query -s "$PACKAGE_NAME"` >/dev/null 2>&1"
 ```
 
 <sub>
 <b>References</b>
+<br>- https://unix.stackexchange.com/questions/126927/have-backticks-i-e-cmd-in-sh-shells-been-deprecated
 <br>- https://unix.stackexchange.com/questions/118433/quoting-within-command-substitution-in-bash
 </sub>
 
