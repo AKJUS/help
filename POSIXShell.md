@@ -110,7 +110,7 @@ RESULT=$(dpkg-query -s "$PACKAGE_NAME" >/dev/null 2>&1)
 RESULT=$(dpkg-query -s $PACKAGE_NAME >/dev/null 2>&1)
 ```
 
-#### Deprecated
+#### Discouraged
 
 While backticks (`` ` ``) – or also called backquotes – are not officialy deprecated, their use is discouraged. Instead use `$(...)`.
 ```shell
