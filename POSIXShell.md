@@ -10,6 +10,10 @@ All of the code above is POSIX-compliant. No language based special features are
 
 [*Debian Almquist Shell (dash)*](https://en.wikipedia.org/wiki/Almquist_shell#Adoption_in_Debian_and_Ubuntu) **‹** [Almquist Shell (ash)](https://en.wikipedia.org/wiki/Almquist_shell) **‹** System V Shell Release 4 (SVR4) **‹** [Bourne Shell (sh)](https://en.wikipedia.org/wiki/Bourne_shell)
 
+## Manual
+
+See [Chapter 2. Shell Command Language](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18) of the The Open Group Base Specifications (Issue 7, Edition 2018).
+
 ## Helpful Tips
 ### 1.0 STDERR and STDOUT
 
