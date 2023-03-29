@@ -37,4 +37,4 @@
 
 ## Seal
 
-- [X] Add tamper-proof seal to case.
+- [X] Add tamper-proof seal to case **and** note down the serial number.
