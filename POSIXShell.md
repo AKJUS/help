@@ -20,11 +20,11 @@ See [Chapter 2. Shell Command Language](https://pubs.opengroup.org/onlinepubs/96
 A redirection instruction from standard output (`STDOUT` = file descriptor 1) or error output (`STDERR` = file descriptor 2) of a command can be placed either at the end *or* at the beginning to improve readabilty, so these both are equivalent:
 
 ```shell
-1>/dev/null foobar
+foobar 1>/dev/null
 ```
 
 ```shell
-foobar 1>/dev/null 
+1>/dev/null foobar
 ```
 
 The instruction `>/dev/null` means: Redirect standard output (`STDOUT`) to `/dev/null` which is a pseudo-device file which just discards the input like a black hole.
@@ -32,24 +32,24 @@ The instruction `>/dev/null` means: Redirect standard output (`STDOUT`) to `/dev
 For `STDOUT` you can simply omit the `1`, so this is equivalent to `1>/dev/null foobar`:
 
 ```shell
->/dev/null foobar
+foobar >/dev/null
 ```
 
 If you only want to suppress errors, you would replace the `1` with a `2`. This would redirect the error output from the command to `/dev/null`:
 
 ```shell
-2>/dev/null foobar
+foobar 2>/dev/null
 ```
 
 To redirect *both* `STDOUT` and `STDERR` you would need to combine them with an additional instruction (`2>&1`):
 
 ```shell
->/dev/null 2>&1 foobar
+foobar >/dev/null 2>&1
 ```
 
 The `2>&1` here means: Redirect `STDERR` to `STDOUT`. Since `STDOUT` is redirected to `/dev/null`, both are suppressed.
 
-If you want to redirect something to `STDERR`, e.g. an error message in your script, you can use `>&2`:
+If you want to redirect something to `STDERR`, e.g. an error message in your script, you can use `>&2` and place it at the beginning for improved readabilty:
 
 ```shell
 >&2 printf '%s\n' "This is an error message."
