@@ -17,29 +17,45 @@ See [Chapter 2. Shell Command Language](https://pubs.opengroup.org/onlinepubs/96
 ## Helpful Tips
 ### 1.0 STDERR and STDOUT
 
-In order to redirect output to STDERR, you can use `>&2` either at the end or at the beginning to improve readabilty:
+A redirection instruction from standard output (`STDOUT` = file descriptor 1) or error output (`STDERR` = file descriptor 2) of a command can be placed either at the end *or* at the beginning to improve readabilty, so these both are equivalent:
+
+```shell
+1>/dev/null foobar
+```
+
+```shell
+foobar 1>/dev/null 
+```
+
+The instruction `>/dev/null` means: Redirect standard output (`STDOUT`) to `/dev/null` which is a pseudo-device file which just discards the input like a black hole.
+
+For `STDOUT` you can simply omit the `1`, so this is equivalent to `1>/dev/null foobar`:
+
+```shell
+>/dev/null foobar
+```
+
+If you only want to suppress errors, you would replace the `1` with a `2`. This would redirect the error output from the command to `/dev/null`:
+
+```shell
+2>/dev/null foobar
+```
+
+To redirect *both* `STDOUT` and `STDERR` you would need to combine them with an additional instruction (`2>&1`):
+
+```shell
+>/dev/null 2>&1 foobar
+```
+
+The `2>&1` here means: Redirect `STDERR` to `STDOUT`. Since `STDOUT` is redirected to `/dev/null`, both are suppressed.
+
+If you want to redirect something to `STDERR`, e.g. an error message in your script, you can use `>&2`:
 
 ```shell
 >&2 printf '%s\n' "This is an error message."
 ```
 
-Suppress standard output:
-
-```shell
-nft --version >/dev/null
-```
-
-Lets assume the command before (`nft ...`) is just used in order to receive the exit code to find out, if the package is installed or not:
-
-```shell
-RESULT=$(nft --version >/dev/null)
-```
-
-In that case we need to both suppress STDOUT *and* STDERR, because either it will return the version or an error message (`command not found`):
-
-```shell
-RESULT=$(nft --version >/dev/null 2>&1)
-```
+The `>&2` here is equivalent to `1>&2`.
 
 ---
 
